@@ -35,6 +35,14 @@ class _PaymentPageState extends State<PaymentPage> {
 
 No other configuration required&mdash;the plugin works out of the box.
 
+## iOS Swift Package Manager
+
+This fork uses Swift Package Manager only on iOS. Use Flutter 3.41 or later (Dart 3.11 or later) and an iOS deployment target of at least 13. SwiftPM is on by default in Flutter 3.44 and later; enable it for apps on earlier supported versions. Flutter adds the package and generates the plugin registrant; do not add the package directly to Xcode. Android setup and the Dart checkout API are unchanged.
+
+For an iOS build check from the example, use a compatible Flutter SDK and run `flutter build ios --simulator --debug`. This compiles and links the plugin without launching the app or making a payment.
+
+Before updating a production app’s fork pin, test the sandbox checkout on a signed device, including authorization presentation and cancellation. In apps that use `UIScene`, this fork’s unchanged authorization presenter still looks up the AppDelegate window rather than the active scene. A successful archive does not verify that checkout UI.
+
 ## :heavy_dollar_sign: Making Payments
 There are two ways of making payment with the plugin.
 1.  **Checkout**: This is the easy way; as the plugin handles all the

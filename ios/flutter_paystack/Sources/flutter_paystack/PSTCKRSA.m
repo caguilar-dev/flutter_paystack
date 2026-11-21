@@ -7,15 +7,7 @@
 //
 
 #import "PSTCKRSA.h"
-
-extern OSStatus SecKeyEncrypt(
-                              SecKeyRef           key,
-                              SecPadding          padding,
-                              const uint8_t        *plainText,
-                              size_t              plainTextLen,
-                              uint8_t             *cipherText,
-                              size_t              *cipherTextLen)
-__OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_2_0) __attribute__((weak_import));
+#import <Security/Security.h>
 
 @implementation PSTCKRSA
 
